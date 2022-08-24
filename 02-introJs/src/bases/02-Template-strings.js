@@ -16,7 +16,7 @@ console.log("fuera del if",nombre,apellido,valorDado);
 const nombreCompleto =`${nombre} ${apellido}`;
 console.log(nombreCompleto);
 
-function getSaludo(){
-    return 'Hola Mundo'
+function getSaludo(parametro){
+    return `Hola ${parametro}`
 }
-console.log(`Este es el texto: ${getSaludo()}`)
+console.log(`Este es el texto: ${getSaludo(nombreCompleto)}`)
