@@ -6,14 +6,13 @@ function getObj(){
             Apellido:"Balado Vidal"}
 }
 
-export const FirstApp = ({title, subtitle,counter}) => {
-    console.log(title)
+export const FirstApp = ({title, subtitle,name}) => {
+  console.log(title)
   return (
     <>
-        {/* <h1>Hola{newMessage}</h1> */}
-        <h1>{title}</h1>
-        <h4>{counter +1}</h4>
-        <code>{JSON.stringify(getObj())}</code>
+        <h1 data-testid="test-title">{title}</h1>
+        {/* <code>{JSON.stringify(getObj())}</code> */}
+        <p>{subtitle}</p>
         <p>{subtitle}</p>
     </>
   )
@@ -26,6 +25,7 @@ FirstApp.propTypes = {
 };
 
 FirstApp.defaultProps = {
-    title : "No Hay titulo",
+    name :"Leandro Martin",
+    //title : "No Hay titulo",
     subtitle : "No Hay subtitulo"
 }
