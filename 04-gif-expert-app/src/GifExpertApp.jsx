@@ -1,27 +1,22 @@
 import { useState } from "react";
-import { AddCategory } from "./components/AddCategory";
+import { AddCategory,GifGrid } from "./components";
 
 export const GifExpertApp = () => {
-  const [categories, setCategories] = useState([ 'Kimetsu no yaiba','My Hero Academy' ]);
+  const [categories, setCategories] = useState([ 'Kimetsu no yaiba' ]);
   const onAddCategory = (newCategory)=>{
+    if (categories.includes(newCategory)) return;
     setCategories([newCategory,...categories]);
   }
   return (
     <>
-        {/* titulo */}
         <h1>GifExpertApp</h1>
-        {/* input */}
-        <AddCategory 
-        /* onAddCategory={setCategories} */
-        onNewCategory={onAddCategory}
-        />
-        {/* listado de gif */}
-        <ol>          
-          {categories.map((category,i)=>{
-            return <li key={i}>{category}</li>
-          })}
-        </ol>
-        {/* gif items */}
+        <AddCategory onNewCategory={onAddCategory}/> 
+            {     categories.map((category)=>
+                    (
+                        <GifGrid key={category} category={category}/>
+                    )
+                )
+            }
     </>
   )
 }
