@@ -10,7 +10,6 @@ export const AddCategory = ({onNewCategory}) => {
         event.preventDefault();
         const newInputValue = inputValue.trim() 
         if (newInputValue==0) return;
-        /* onAddCategory( categories=>[ inputValue,...categories ]); */
         onNewCategory(newInputValue);
         setInputValue('');
 
