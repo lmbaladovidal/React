@@ -17,13 +17,8 @@
     "isomorphic-fetch": "^3.0.0",
     "jest-environment-jsdom": "^29.2.0",
     "react": "^18.2.0",
-<<<<<<< HEAD
     "react-dom": "^18.2.0",
     "react-testing-library": "^8.0.1"
-=======
-    "react-calendar": "^3.9.0",
-    "react-dom": "^18.2.0"
->>>>>>> 5e4fd9c6ac9bb89c5931fecf63b76c91a6ce2c50
   },
   "devDependencies": {
     "@babel/cli": "^7.19.3",
