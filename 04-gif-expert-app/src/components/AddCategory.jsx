@@ -11,12 +11,12 @@ export const AddCategory = ({onNewCategory}) => {
         event.preventDefault();
         const newInputValue = inputValue.trim() 
         if (newInputValue==0) return;
-        onNewCategory(newInputValue);
         setInputValue('');
+        onNewCategory(newInputValue);
 
     }
   return (
-    <form onSubmit = { onSubmit}>
+    <form onSubmit = { onSubmit} aria-label="form">
         <input  type="text"  value={inputValue } onChange={ onInputChange }/>
     </form>
   )
