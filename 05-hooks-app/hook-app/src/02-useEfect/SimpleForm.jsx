@@ -32,7 +32,6 @@ export const SimpleForm = () => {
 
   return (
     <>
-        <hr />
         <h1>SimpleForm</h1>
         <input type="text" 
                className="form-control" 
@@ -51,6 +50,7 @@ export const SimpleForm = () => {
         {
             (username==='lmbv') && <Message/> 
         }
+        <hr/>
     </>
   )
 }
