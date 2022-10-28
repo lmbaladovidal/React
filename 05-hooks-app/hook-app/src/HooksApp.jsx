@@ -1,27 +1,31 @@
 import React from 'react'
 
-import { CounterApp } from './01-useState/CounterApp'
+/* import { CounterApp } from './01-useState/CounterApp'
 import { CounterWithCustomHook } from './01-useState/CounterWithCustomHook'
 import { FormWithCustomHook } from './02-useEfect/FormWithCustomHook'
 import { SimpleForm } from './02-useEfect/SimpleForm'
 import { MultipleCustomHooks } from './03-Examples/MultipleCustomHooks'
 import { FocusScreen } from './04-useRef/FocusScreen'
 import { Layout } from './05-useLayoutEffect/LayoutEffect'
-import { Memorice } from './06-Memos/Memorice'
+import { MemoHook } from './06-Memos/MemoHook'
+import { Memorice } from './06-Memos/Memorice' */
+import { CallBackHook } from './06-Memos/CallBackHook'
 
 export const HooksApp = () => {
   return (
     <>
         <h1>HookApp</h1>
         <hr/>
-        {/* <CounterApp/>
+{/*         <CounterApp/>
         <CounterWithCustomHook/>
         <SimpleForm/>
         <FormWithCustomHook/>
         <MultipleCustomHooks/>
         <FocusScreen/>
-        <Layout/> */}
+        <Layout/>
         <Memorice/>
+        <MemoHook/> */}
+        <CallBackHook/>
     </>
   )
 }
