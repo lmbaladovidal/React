@@ -7,7 +7,7 @@ export const TodoAdd = ({onNewToDo}) => {
                             event.preventDefault();
                             if(description.length==0) return
                             const newTodo = {
-                                id: new Date().getTime,
+                                id: new Date().getTime(),
                                 description: description,
                                 done:false
                             }
