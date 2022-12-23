@@ -4,13 +4,13 @@ import { useForm } from "../../src/hooks/useForm"
 
 describe('Pruebas en useForm', () => { 
     
-    test('should return the default info', () => { 
+    const initialForm = {
+        name:'leandro',
+        email:'lm.baladovidal@gmail.com'
+    }
 
-        const initialForm = {
-                                name:'leandro',
-                                email:'lm.baladovidal@gmail.com'
-                            }
-        
+
+    test('should return the default info', () => {         
         const {result } = renderHook(()=> useForm(initialForm));
         console.log(result.current);
         expect(result.current).toEqual( {
@@ -23,15 +23,10 @@ describe('Pruebas en useForm', () => {
 
      })
 
-     test('should change the forms name', () => { 
-        
+     test('should change the forms name', () => {         
         const newValue = "Martin"
         const {result } = renderHook(()=> useForm(initialForm));
-        const {onInputChange,onResetForm} =result.current
-        const initialForm = {
-            name:'leandro',
-            email:'lm.baladovidal@gmail.com'
-        }
+        const {onInputChange,onResetForm} =result.current        
         act(()=>{
             onInputChange({target:{name:'name',value:newValue}})
             onResetForm();
@@ -42,16 +37,16 @@ describe('Pruebas en useForm', () => {
 
       })
 
-      test('should reset the form', () => { 
-        
+      test('should reset the form', () => {         
         const newValue = "Martin"
-        const {result } = renderHook(()=> useForm());
-        const {onInputChange} =result.current
+        const {result } = renderHook(()=> useForm(initialForm));
+        const {onInputChange,onResetForm} =result.current
         act(()=>{
             onInputChange({target:{name:'name',value:newValue}})
+            onResetForm();
         })
-        expect(result.current.name).toBe(newValue)
-        expect(result.current.formState.name).toBe(newValue)
+        expect(result.current.name).toBe(initialForm.name)
+        expect(result.current.formState.name).toBe(initialForm.name)
 
       })
 
