@@ -14,8 +14,8 @@ export const todoReducer = (initialState,action)=>{//initialState viene con lo q
                 return initialState.map(todo=>{
                     if(todo.id===action.payload){
                         return {...todo,
-                                done: !todo.done
-                                }
+                            done: !todo.done
+                        }
                     }
                     return todo
                 })
