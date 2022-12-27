@@ -38,10 +38,10 @@ describe('Prues en TodoReducer', () => {
         const action ={
             type:'[TODO] Remove ToDo',
             payload:initialState[0]
-        }       
+        }    
+           
         const newState = todoReducer(initialState,action);
         expect(newState.length).toBe(0);
-
 
        })
 
@@ -51,9 +51,12 @@ describe('Prues en TodoReducer', () => {
             type:'[TODO] Toggle ToDo',
             payload:initialState[0].id
         }
+
         const newState = todoReducer(initialState,action);
-        console.log(newState);
-        expect(newState.length).toBe(1);
+        expect(newState[0].done).toBeTruthy();
+        const newState2 = todoReducer(newState,action);
+        expect(newState2[0].done).toBeFalsy();
+
         })
 
  })
