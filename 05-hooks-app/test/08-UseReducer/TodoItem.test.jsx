@@ -83,9 +83,7 @@ describe('Purebas en <TodoItem/>', () => {
         fireEvent.click(buttonElement);
         expect(onRemoveTodoMock).toHaveBeenCalledWith(todo);
 
-
       })
-
      
 
  })

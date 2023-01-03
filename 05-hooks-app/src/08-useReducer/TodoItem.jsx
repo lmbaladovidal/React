@@ -9,7 +9,7 @@ export const TodoItem = ({todo,onRemoveTodo,onToggleTodo}) => {
           onClick={() => onToggleTodo(todo.id)}
           aria-label="span"
         >
-          { todo.description}
+          {todo.description}
         </span>
         <button className="btn btn-danger" onClick={()=>onRemoveTodo(todo)}>Borrar</button>
     </li>

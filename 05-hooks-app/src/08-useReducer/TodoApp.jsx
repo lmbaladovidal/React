@@ -18,7 +18,7 @@ export const TodoApp = () => {
           <TodoList todos={todos} onRemoveTodo={handleRemoveTodo} onToggleTodo={handleToggleTodo}/>
         </div>
         <div className="col-5">
-          <h4>Agregar ToDo</h4>
+          <h4>Agregaar ToDo</h4>
           <hr/>
           <TodoAdd onNewToDo={handleNewTodo} />
         </div>
