@@ -10,7 +10,9 @@ export const LoginPage = () => {
     <>
         <h1>LoginPage</h1>
         <hr/>
-        <h4>{user?.nombre}</h4>
+        <h4 aria-label='h4'>
+          {user?.nombre}
+        </h4>
 
         <button
           className='btn btn-primary'

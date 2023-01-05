@@ -10,7 +10,7 @@ export const HomePage = () => {
     <>
         <h1>HomePage <small>{algo.user?.nombre}</small></h1>
         <hr/>
-        <pre>
+        <pre aria-label='pre'>
           {JSON.stringify(algo.user,null,3)}
         </pre>
     </>
