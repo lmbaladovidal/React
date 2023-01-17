@@ -13,15 +13,17 @@ describe('pruebas en <FirstApp/>', () => {
                 expect(screen.getByText).toBeTruthy();
                 //screen.debug();
          })
-         test('debe mostrar el titulo en un h1', () => { 
+
+        test('debe mostrar el titulo en un h1', () => { 
                 render(<FirstApp title={title}/>)
                 expect(screen.getByRole('heading', {level:1}).innerHTML).toContain(title);
-          });
-          test('debe mostar el subtitulo enviado por props', () => { 
+        });
+
+        test('debe mostar el subtitulo enviado por props', () => { 
                 render(<FirstApp title={title} subtitle={subTitle}/>);
                 expect(screen.getAllByText(subTitle).length).toBe(2);
 
-           })
+        })
 
     
 });

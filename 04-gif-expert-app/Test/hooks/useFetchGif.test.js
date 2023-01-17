@@ -10,7 +10,7 @@ describe('test on hooks fetchUseGif', () => {
         expect(isLoading).toBeTruthy();
      });
 
-     test('should return an array of images and isLoading as true', async() => { 
+     test('should return an array of images and isLoading as false', async() => { 
         const {result,rerender,unmount} = renderHook(() => useFetchGif(category));
         await waitFor(
             ()=>expect(result.current.images.length).toBeGreaterThan(1),

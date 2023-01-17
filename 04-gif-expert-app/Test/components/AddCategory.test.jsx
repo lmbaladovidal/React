@@ -24,6 +24,7 @@ describe('pruebas es <AddCategory/>', () => {
         expect(onNewCategory).toHaveBeenCalledWith('Kimetsu No Yaiba');
 
      })
+     
      test('shouldn\'t call onNewCategory if input is empty', () => { 
         const onNewCategory = jest.fn();
         render(<AddCategory onNewCategory={ onNewCategory }/>);

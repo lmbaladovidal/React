@@ -11,16 +11,19 @@ describe('pruebas en <CounterApp/>', () => {
         render(<CounterApp value={value}/>)
         expect(parseInt(screen.getByTestId("test-counter").innerHTML.trim())).toBe(100)
       });
+
       test('debe incrementar con el boton +1', () => { 
         render(<CounterApp value={value}/>)
         fireEvent.click( screen.getByText("+1") )  
         expect(screen.getByText('101')).toBeTruthy();
        })
+
       test('debe decrementar con el boton +1', () => { 
         render(<CounterApp value={value}/>)
         fireEvent.click( screen.getByText("-1") )  
         expect(screen.getByText('99')).toBeTruthy();
        })
+       
       test('debe resetear el contador', () => { 
         render(<CounterApp value={value}/>)
         fireEvent.click( screen.getByRole('button',{name:'btn-reset'}) );  
