@@ -12,7 +12,8 @@ export const FocusScreen = () => {
             ref={ inputRef }
             className="form-control"
             type='text'
-            placeholder='Ingrese su nombre'></input>
+            placeholder='Ingrese su nombre'>                
+        </input>
         <hr/>
         <button 
             className='btn btn-primary mt-2' 

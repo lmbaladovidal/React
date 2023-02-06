@@ -11,7 +11,7 @@ describe('Pruebas en useForm', () => {
 
 
     test('should return the default info', () => {         
-        const {result } = renderHook(()=> useForm(initialForm));
+        const { result } = renderHook(()=> useForm(initialForm));
         console.log(result.current);
         expect(result.current).toEqual( {
             name: initialForm.name,
@@ -31,7 +31,6 @@ describe('Pruebas en useForm', () => {
             onInputChange({target:{name:'name',value:newValue}})
             onResetForm();
         })
-        console.log(result.current)
         expect(result.current.name).toBe(initialForm.name)
         expect(result.current.formState.name).toBe(initialForm.name)
 

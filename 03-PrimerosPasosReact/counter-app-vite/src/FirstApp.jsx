@@ -13,7 +13,7 @@ export const FirstApp = ({title, subtitle,name}) => {
         <h1 data-testid="test-title">{title}</h1>
         {/* <code>{JSON.stringify(getObj())}</code> */}
         <p>{subtitle}</p>
-        <p>{subtitle}</p>
+        <p>{name}</p>
     </>
   )
 }
