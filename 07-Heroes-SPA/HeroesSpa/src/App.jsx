@@ -1,15 +1,17 @@
 import { useState } from 'react'
 import './App.css'
+import { AuthProvider } from './auth'
 import { AppRouter } from './router/AppRouter'
 
-function App() {
+
+
+export const App = ()=>{
   const [count, setCount] = useState(0)
 
-  return (
-    <div className="App">
+    return (
+      <AuthProvider>
         <AppRouter/>
-    </div>
+      </AuthProvider>
   )
 }
 
-export default App
