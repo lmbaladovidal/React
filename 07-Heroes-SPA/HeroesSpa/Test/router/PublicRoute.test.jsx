@@ -2,7 +2,6 @@
 import { render, screen } from '@testing-library/react'
 import { MemoryRouter, Route, Routes } from 'react-router-dom'
 import { AuthContext } from '../../src/auth'
-import { PrivateRoute } from '../../src/router/PrivateRoute'
 import { PublicRoute } from '../../src/router/PublicRoute'
 describe('Pruebas en <PublicRoute/>', () => {
 
