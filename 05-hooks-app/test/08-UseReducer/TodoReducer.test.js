@@ -1,7 +1,7 @@
 import { act } from "react-dom/test-utils";
 import { todoReducer } from "../../src/08-useReducer/TodoReducer"
 
-describe('Prues en TodoReducer', () => { 
+describe('Pruebas en TodoReducer', () => { 
     
     const initialState = [{
         id:1,

@@ -22,6 +22,8 @@ describe('Pruebas sobre <AppRouter/>', () => {
         expect(screen.getByText('Login')).toBeTruthy();
     })
 
+    
+
     test('should render the marvel page if is atentucathed', () => { 
         
         const contextValue = {
