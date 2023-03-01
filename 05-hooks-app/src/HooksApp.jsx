@@ -2,7 +2,6 @@ import React from 'react'
 
 /* import { CounterApp } from './01-useState/CounterApp'
 import { CounterWithCustomHook } from './01-useState/CounterWithCustomHook'
-import { FormWithCustomHook } from './02-useEfect/FormWithCustomHook'
 import { SimpleForm } from './02-useEfect/SimpleForm'
 import { MultipleCustomHooks } from './03-Examples/MultipleCustomHooks'
 import { FocusScreen } from './04-useRef/FocusScreen'
@@ -12,6 +11,7 @@ import { Memorice } from './06-Memos/Memorice'
 import { CallBackHook } from './06-Memos/CallBackHook'
 import { Padre } from './07-tarea-memo/Padre'
 import './08-useReducer/intro-reducer'*/
+import { FormWithCustomHook } from './02-useEfect/FormWithCustomHook'
 import { TodoApp } from './08-useReducer/TodoApp'
 import { MainApp } from './09-useContext/MainApp'
 import { BrowserRouter } from "react-router-dom";
@@ -24,7 +24,6 @@ export const HooksApp = () => {
          <CounterApp/>
         <CounterWithCustomHook/>
         <SimpleForm/>
-        <FormWithCustomHook/>
         <MultipleCustomHooks/>
         <FocusScreen/>
         <Layout/>
@@ -32,9 +31,11 @@ export const HooksApp = () => {
         <MemoHook/> 
         <CallBackHook/>
         <Padre/>
-        <TodoApp/>*/}
-        <BrowserRouter>
+        <TodoApp/>
           <MainApp/>
+        */}
+        <BrowserRouter>
+        <FormWithCustomHook/>
         </BrowserRouter>
     </>
   )

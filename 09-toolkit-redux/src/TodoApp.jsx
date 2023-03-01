@@ -8,15 +8,11 @@ export const TodoApp = () => {
   const [todoId, setTodoId] = useState(1)
   const { data: todo, isLoading } = useGetTodoQuery(todoId);
   const nextTodo = ()=>{
-    console.log("next");
     setTodoId(todoId+1)
-    console.log(todoId);
   }
   const prevTodo = ()=>{
-    console.log("prev");
     if(todoId===1) return
     setTodoId(todoId-1)
-    console.log(todoId);
   }
 
   return (
