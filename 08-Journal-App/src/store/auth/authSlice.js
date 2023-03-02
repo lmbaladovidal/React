@@ -14,6 +14,7 @@ export const authSlice = createSlice({
   initialState,
   reducers: {
     login:(state,action)=>{
+      state.status = 'logged'
 
     },
     logout:(state,payload)=>{
