@@ -13,12 +13,22 @@ export const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    login:(state,action)=>{
-      state.status = 'logged'
+    login:(state,{payload})=>{
+      state.status = 'authenticated';//checking, not-authenticated, authenticated
+      state.uid = payload.uid ;
+      state.emai = payload.emai ;
+      state.displayName = payload.displayName ;
+      state.photoURL = payload.photoURL ;
+      state.errorMessage = null ;
 
     },
-    logout:(state,payload)=>{
-
+    logout:(state,{payload})=>{
+      state.status = 'not-authenticated';//checking, not-authenticated, authenticated
+      state.uid = null;
+      state.emai = null;
+      state.displayName = null;
+      state.photoURL = null;
+      state.errorMessage = payload;
     },
     checkingCredentials:(state)=>{
         state.status = 'checking';

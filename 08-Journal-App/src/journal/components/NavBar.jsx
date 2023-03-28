@@ -1,8 +1,25 @@
+import { useNavigate } from "react-router-dom"
 import { AppBar, Grid, IconButton, Toolbar, Typography } from "@mui/material"
 import MenuOutlined from '@mui/icons-material/MenuOutlined'
 import LogoutOutlined from '@mui/icons-material/LogoutOutlined'
+import { useDispatch, useSelector } from "react-redux"
+import { logout } from "../../store/auth"
+import { useEffect } from "react"
 
 export const NavBar = ({ drawerWidth = 240 }) => {
+    const dispatch = useDispatch();
+    const {status} = useSelector(state=> state.auth)
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        status === 'not-authenticated'?navigate('/auth/login'):null
+      }, [status])
+    
+    const onClickLogOut = ()=>{
+        dispatch(logout())
+    }
+
+
     return (
         <AppBar
             position="fixed"
@@ -25,7 +42,7 @@ export const NavBar = ({ drawerWidth = 240 }) => {
                     alignItems='center'
                 >
                     <Typography variant="h6" noWrap component='div'> JournalApp </Typography>
-                    <IconButton color="error">
+                    <IconButton color="error" onClick={onClickLogOut}>
                         <LogoutOutlined />
                     </IconButton>
                 </Grid>
