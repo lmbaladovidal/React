@@ -103,10 +103,10 @@ export const RegisterPage = () => {
             spacing={2}
             sx={{ mb: 2, mt: 1 }}
           >
-            <Grid item xs={12}>
-              <Alert severity='error'>{}</Alert>
+            <Grid item xs={12} display={!!errorMessage?'':'none'}>
+              <Alert severity='error'>{errorMessage}</Alert>
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} >
               <Button type='submit' variant='contained' disabled={isAuthenticating} fullWidth>
                 Crear Cuenta
               </Button>
