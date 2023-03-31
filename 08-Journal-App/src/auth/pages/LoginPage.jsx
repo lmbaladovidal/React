@@ -13,30 +13,30 @@ import { checkingAuthentication, startGoogleSingIn } from '../../store/auth/thun
 
 export const LoginPage = () => {
 
-  const {status} = useSelector(state => state.auth);
+  const { status } = useSelector(state => state.auth);
   const dispatch = useDispatch();
 
-  const {email,password,onInputChange,formState}= useForm({
-    email:'',
-    password:''
+  const { email, password, onInputChange, formState } = useForm({
+    email: '',
+    password: ''
   })
 
-const navigate = useNavigate()
-const isAuthenticating = useMemo(()=> status === 'checking', [status])
+  const navigate = useNavigate()
+  const isAuthenticating = useMemo(() => status === 'checking', [status])
 
-useEffect(() => {
-  status === 'authenticated'?navigate('/'):null
-}, [status])
+  useEffect(() => {
+    status === 'authenticated' ? navigate('/') : null
+  }, [status])
 
 
-  const onSubmit = (event)=>{
+  const onSubmit = (event) => {
     event.preventDefault();
-    console.log({email,password});
+    console.log({ email, password });
     dispatch(checkingAuthentication())
   }
 
-  const onGoogleSingIn = ()=>{
-    console.log('GoogleSingIn',{email,password});
+  const onGoogleSingIn = () => {
+    console.log('GoogleSingIn', { email, password });
     dispatch(startGoogleSingIn())
   }
 
@@ -53,18 +53,18 @@ useEffect(() => {
               name='email'
               value={email}
               onChange={onInputChange}
-               />
+            />
           </Grid>
           <Grid item xs={12} sx={{ mt: 2 }}>
             <TextField
               label='Contraseña'
               type='password'
               placeholder='Contraseña'
-              fullWidth 
+              fullWidth
               name='password'
               value={password}
               onChange={onInputChange}
-              />
+            />
           </Grid>
           <Grid
             container
@@ -72,12 +72,12 @@ useEffect(() => {
             sx={{ mb: 2, mt: 1 }}
           >
             <Grid item xs={12} md={6}>
-              <Button type='submit'variant='contained' disabled ={isAuthenticating} fullWidth>
+              <Button type='submit' variant='contained' disabled={isAuthenticating} fullWidth>
                 Login
               </Button>
             </Grid>
             <Grid item xs={12} md={6}>
-              <Button variant='contained' onClick={onGoogleSingIn} disabled ={isAuthenticating} fullWidth>
+              <Button variant='contained' onClick={onGoogleSingIn} disabled={isAuthenticating} fullWidth>
                 <Google />
                 <Typography sx={{ ml: 1 }}>
                   Google

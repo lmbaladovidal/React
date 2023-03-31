@@ -7,6 +7,8 @@ import Grid from '@mui/material/Grid'
 import React, { useMemo, useState } from 'react'
 import { AuthLayout } from '../layout/AuthLayout';
 import { useForm } from '../../hooks';
+import { useDispatch } from 'react-redux';
+import { startCreatinUserWithEmailPassword } from '../../store/auth/thunks';
 
 export const RegisterPage = () => {
 
@@ -23,7 +25,7 @@ export const RegisterPage = () => {
   }
 
   const [formSubmitted, setFormSubmitted] = useState(false)
-
+  const dispatch = useDispatch()
   const {displayName, 
     email,
     password,
@@ -38,7 +40,8 @@ export const RegisterPage = () => {
   const onSubmitForm = (event)=>{
     event.preventDefault();
     setFormSubmitted(true)
-    console.log(formState)
+    if(!isFormValid) return ;
+    dispatch(startCreatinUserWithEmailPassword(formState))
   }
 
 
