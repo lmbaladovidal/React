@@ -1,14 +1,15 @@
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import Link from '@mui/material/Link'
 import Grid from '@mui/material/Grid'
-import React, { useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { AuthLayout } from '../layout/AuthLayout';
 import { useForm } from '../../hooks';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { startCreatinUserWithEmailPassword } from '../../store/auth/thunks';
+import { Alert } from '@mui/material';
 
 export const RegisterPage = () => {
 
@@ -24,8 +25,18 @@ export const RegisterPage = () => {
     displayName:[(value)=>{return value.length>=1},'El nombre es obligatorio'] 
   }
 
-  const [formSubmitted, setFormSubmitted] = useState(false)
+  const { status, errorMessage } = useSelector(state => state.auth);
   const dispatch = useDispatch()
+  const isAuthenticating = useMemo(() => status === 'checking', [status])
+
+  const [formSubmitted, setFormSubmitted] = useState(false)
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    status === 'authenticated' ? navigate('/') : null
+  }, [status])
+
+
   const {displayName, 
     email,
     password,
@@ -93,7 +104,10 @@ export const RegisterPage = () => {
             sx={{ mb: 2, mt: 1 }}
           >
             <Grid item xs={12}>
-              <Button type='submit' variant='contained' fullWidth>
+              <Alert severity='error'>{}</Alert>
+            </Grid>
+            <Grid item xs={12}>
+              <Button type='submit' variant='contained' disabled={isAuthenticating} fullWidth>
                 Crear Cuenta
               </Button>
             </Grid>

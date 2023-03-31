@@ -13,7 +13,7 @@ import { checkingAuthentication, startGoogleSingIn } from '../../store/auth/thun
 
 export const LoginPage = () => {
 
-  const { status } = useSelector(state => state.auth);
+  const { status,errorMessage } = useSelector(state => state.auth);
   const dispatch = useDispatch();
 
   const { email, password, onInputChange, formState } = useForm({
