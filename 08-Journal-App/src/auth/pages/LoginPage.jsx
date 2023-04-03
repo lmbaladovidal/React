@@ -9,7 +9,8 @@ import Google from '@mui/icons-material/Google'
 import Grid from '@mui/material/Grid'
 import { useForm } from '../../hooks';
 import { AuthLayout } from '../layout/AuthLayout';
-import { checkingAuthentication, startGoogleSingIn } from '../../store/auth/thunks';
+import { checkingAuthentication, startGoogleSingIn, startLoginUserWithEmailPassword } from '../../store/auth/thunks';
+import { Alert } from '@mui/material';
 
 export const LoginPage = () => {
 
@@ -31,14 +32,14 @@ export const LoginPage = () => {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    console.log({ email, password });
-    dispatch(checkingAuthentication())
+    dispatch(startLoginUserWithEmailPassword({ email, password }))
   }
 
   const onGoogleSingIn = () => {
     console.log('GoogleSingIn', { email, password });
     dispatch(startGoogleSingIn())
   }
+
 
   return (
     <AuthLayout title='Login'>
@@ -71,6 +72,9 @@ export const LoginPage = () => {
             spacing={2}
             sx={{ mb: 2, mt: 1 }}
           >
+           <Grid item xs={12} display={!!errorMessage?'':'none'}>
+              <Alert severity='error'>{errorMessage}</Alert>
+            </Grid>
             <Grid item xs={12} md={6}>
               <Button type='submit' variant='contained' disabled={isAuthenticating} fullWidth>
                 Login
