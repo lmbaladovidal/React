@@ -5,6 +5,7 @@ import LogoutOutlined from '@mui/icons-material/LogoutOutlined'
 import { useDispatch, useSelector } from "react-redux"
 import { logout } from "../../store/auth"
 import { useEffect } from "react"
+import { startLogout } from "../../store/auth/thunks"
 
 export const NavBar = ({ drawerWidth = 240 }) => {
     const dispatch = useDispatch();
@@ -16,7 +17,7 @@ export const NavBar = ({ drawerWidth = 240 }) => {
       }, [status])
     
     const onClickLogOut = ()=>{
-        dispatch(logout())
+        dispatch(startLogout())
     }
 
 

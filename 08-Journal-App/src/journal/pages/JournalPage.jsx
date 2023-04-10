@@ -7,7 +7,7 @@ import { fontSize } from "@mui/system"
 
 export const JournalPage = () => {
   return (
-    <JournalLayout>
+    <JournalLayout >
       <NothingSelectedView/>  
       {/* <NoteView/> */}
       <IconButton 
