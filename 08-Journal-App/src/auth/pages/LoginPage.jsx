@@ -25,9 +25,9 @@ export const LoginPage = () => {
   const navigate = useNavigate()
   const isAuthenticating = useMemo(() => status === 'checking', [status])
 
-  useEffect(() => {
-    status === 'authenticated' ? navigate('/') : null
-  }, [status])
+  // useEffect(() => {
+  //   status === 'authenticated' ? navigate('/') : null
+  // }, [status])
 
 
   const onSubmit = (event) => {
