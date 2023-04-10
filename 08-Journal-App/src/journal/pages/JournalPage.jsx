@@ -4,13 +4,23 @@ import Typography from "@mui/material/Typography"
 import { JournalLayout } from "../layout/JournalLayout"
 import { NoteView, NothingSelectedView } from "../views"
 import { fontSize } from "@mui/system"
+import { useDispatch } from "react-redux"
+import { startNewNote } from "../../store/Journal/thunks"
 
 export const JournalPage = () => {
+
+  const dispatch = useDispatch();
+
+  const onClickNewNote=()=>{
+    dispatch(startNewNote());
+  }
+
   return (
     <JournalLayout >
       <NothingSelectedView/>  
       {/* <NoteView/> */}
-      <IconButton 
+      <IconButton
+        onClick={onClickNewNote} 
         size='large'
         sx={{
           color:'white',
